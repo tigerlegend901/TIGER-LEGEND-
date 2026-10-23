@@ -1,12 +1,12 @@
 // =======================================================
 // WEBSITE NAME (NICKNAME)
 // =======================================================
-var website_name = "YASIN";
+var website_name = "TIGER-LEGEND";
 
 // =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "telegram channel link";
+var telegram_channel_link = "https://t.me/tigerlegend901";
 
 // =======================================================
 // TELEGRAM GROUP LINK
@@ -23,4 +23,4 @@ var youtube_channel_link = "YouTube channel link";
 // =======================================================
 var notification_text = `সবথেকে কম দামে টপ করার জন্য সেরা ওয়েবসাইট
 ১০০% বিশ্বস্ত ও দ্রুত ডেলিভারিতে
-অর্ডার করুন নিশ্চিন্তে ♥️`;
+অর্ডার করুন নিশ্চিন্তে ☠️`;
