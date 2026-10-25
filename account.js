@@ -6,7 +6,7 @@ var website_name = "TIGER-LEGEND";
 // =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "t.me/@itz_jihad_hossain";
+var telegram_channel_link = "t.me/itz_jihad_hossain";
 
 // =======================================================
 // TELEGRAM GROUP LINK
