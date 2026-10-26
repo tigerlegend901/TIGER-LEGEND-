@@ -6,7 +6,7 @@ var website_name = "TIGER-LEGEND-TOPUP";
 // =======================================================
 // TELEGRAM CHANNEL LINK
 // =======================================================
-var telegram_channel_link = "t.me/TL_Topup_Bot";
+var telegram_channel_link = "t.me/Tiger_Legend_Bot";
 
 // =======================================================
 // TELEGRAM GROUP LINK
