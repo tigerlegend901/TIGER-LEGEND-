@@ -1,7 +1,7 @@
 // =======================================================
 // WEBSITE NAME (NICKNAME)
 // =======================================================
-var website_name = "TIGER-LEGEND";
+var website_name = "TIGER-LEGEND-TOPUP";
 
 // =======================================================
 // TELEGRAM CHANNEL LINK
