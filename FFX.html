@@ -7,10 +7,10 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<link rel="icon" type="image/jpeg" href="Main logo.jpg">
-<link rel="shortcut icon" href="Main logo.jpg">
-<link rel="apple-touch-icon" href="Main logo.jpg">
-<meta property="og:image" content="Main logo.jpg">
+<link rel="icon" type="image/jpeg" href="./Main%20logo.jpg">
+<link rel="shortcut icon" href="./Main%20logo.jpg">
+<link rel="apple-touch-icon" href="./Main%20logo.jpg">
+<meta property="og:image" content="./Main%20logo.jpg">
 <title>Nickname</title>
 <script>
 // =======================================================
@@ -20,7 +20,7 @@ window.ACCOUNT_CONFIG = window.ACCOUNT_CONFIG || {};
 
 function syncAccountLinks() {
   var siteName = (typeof website_name !== 'undefined' ? website_name : (window.website_name || (window.ACCOUNT_CONFIG && window.ACCOUNT_CONFIG.websiteName) || '')).trim();
-  if (!siteName) siteName = 'Nickname';
+  if (!siteName) siteName = 'TIGER LEGEND TOPUP';
 
   document.title = siteName;
   document.querySelectorAll('[data-site-name]').forEach(function(el) {
@@ -301,15 +301,21 @@ footer .about h2{margin:0 0 6px;font-size:24px;font-weight:800;letter-spacing:-.
 .btn:active{transform:scale(.98)}
 .btn:disabled{opacity:.6}
 .pname{display:none;align-items:center;gap:8px;margin-top:12px;padding:12px 14px;border-radius:12px;font-size:14px;font-weight:600}
-.pname.ok{display:flex;background:#19172f;color:#fff;border:1px solid #302b50;padding:14px;border-radius:16px;gap:12px;align-items:center}
+.pname.ok{position:relative;display:grid;grid-template-columns:88px minmax(0,1fr) 34px;grid-template-areas:"avatar info check";align-items:center;gap:12px;margin-top:14px;padding:16px 14px;border:1px solid rgba(72,154,255,.9);border-radius:24px;color:#fff;background:radial-gradient(ellipse at 15% 10%,rgba(0,204,255,.13),transparent 42%),radial-gradient(ellipse at 100% 100%,rgba(183,0,255,.2),transparent 45%),linear-gradient(135deg,#020b25 0%,#080d31 55%,#100529 100%);box-shadow:0 0 0 1px rgba(0,225,255,.25),inset 0 0 22px rgba(22,78,255,.16),0 0 18px rgba(0,111,255,.18);overflow:hidden}
+.pname.ok:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1.5px;background:linear-gradient(120deg,#00eaff,#354dff 38%,#9a35ff 72%,#ff37ed);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .pname.err{display:flex;background:#fef3f2;color:#b42318;border:1px solid #fecdca}
 .pname svg{font-size:18px;flex-shrink:0}
-.player-card-avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:#34316b;font-size:24px}
-.player-card-info{flex:1;min-width:0}
-.player-card-name{font-size:16px;font-weight:800;line-height:1.35;overflow-wrap:anywhere;color:#fff}
-.player-card-region{margin-top:4px;font-size:12px;color:#c3d1ff}
-.player-card-stats{margin-top:5px;font-size:12px;color:#9db4f4;line-height:1.5;overflow-wrap:anywhere}
-.player-card-check{width:28px;height:28px;flex:0 0 28px;border-radius:50%;display:grid;place-items:center;background:#3269df;color:#fff;font-size:18px;font-weight:800}
+.player-card-avatar{grid-area:avatar;width:84px;height:84px;flex:0 0 84px;border-radius:18px;display:grid;place-items:center;background:radial-gradient(circle at 35% 20%,#3a286b,#070b25 70%);font-size:38px;border:2px solid #ffd45e;box-shadow:0 0 0 2px rgba(255,197,58,.35),0 0 18px rgba(255,166,0,.35)}
+.player-card-info{grid-area:info;flex:1;min-width:0}
+.player-card-name{font-size:19px;font-weight:900;line-height:1.3;overflow-wrap:anywhere;color:#fff;text-shadow:0 0 12px rgba(69,167,255,.3)}
+.player-card-region{margin-top:6px;font-size:14px;font-weight:700;color:#59dfff}
+.player-card-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:12px;font-size:12px;color:#b8caff;line-height:1.3;overflow-wrap:anywhere}
+.player-card-stat{min-width:0;padding:9px 5px;text-align:center;border:1px solid rgba(79,151,255,.55);border-radius:13px;background:rgba(2,9,32,.75);box-shadow:inset 0 0 10px rgba(31,96,255,.1)}
+.player-card-stat b{display:block;font-size:10px;color:#46d7ff;margin-bottom:5px}
+.player-card-stat span{display:block;font-size:12px;font-weight:800;color:#fff;overflow-wrap:anywhere}
+.player-card-stat:nth-child(2){border-color:rgba(226,57,255,.55)}.player-card-stat:nth-child(2) b{color:#f15dff}
+.player-card-stat:nth-child(3){border-color:rgba(48,255,178,.5)}.player-card-stat:nth-child(3) b{color:#51ffbd}
+.player-card-check{grid-area:check;width:32px;height:32px;flex:0 0 32px;border-radius:50%;display:grid;place-items:center;background:#082d69;color:#fff;border:2px solid #39eaff;box-shadow:0 0 14px rgba(0,220,255,.55);font-size:20px;font-weight:900}
 .pay{display:flex;align-items:center;gap:12px;padding:13px 14px;margin-bottom:10px;border-radius:16px;border:1.5px solid var(--bd);background:#fff;cursor:pointer;font-family:inherit;width:100%;text-align:left;color:var(--tx);transition:.2s}
 .pay .pi2{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;color:#fff;background:var(--g);flex-shrink:0}
 .pay .tx{flex:1;min-width:0}
@@ -379,6 +385,15 @@ footer .about h2{margin:0 0 6px;font-size:24px;font-weight:800;letter-spacing:-.
 .inp{height:40px;padding:0 12px;border-radius:10px;font-size:14px}
 .btn{height:40px;margin-top:9px;border-radius:10px;font-size:14px;font-weight:600}
 .pname{margin-top:9px;padding:9px 11px;font-size:12.5px;border-radius:10px}
+.pname.ok{grid-template-columns:58px minmax(0,1fr) 26px;gap:9px;padding:12px 9px;border-radius:18px}
+.player-card-avatar{width:56px;height:62px;border-radius:14px;font-size:28px}
+.player-card-name{font-size:15px}
+.player-card-region{font-size:11.5px;margin-top:4px}
+.player-card-stats{gap:4px;margin-top:9px}
+.player-card-stat{padding:7px 3px;border-radius:10px}
+.player-card-stat b{font-size:9px;margin-bottom:4px}
+.player-card-stat span{font-size:10px}
+.player-card-check{width:25px;height:25px;font-size:16px}
 .po-grid{gap:9px}
 .po{border-radius:15px}
 .po .pft{padding:8px 11px;font-size:13px}
@@ -699,7 +714,7 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
 
 <header>
   <div class="wrap hd">
-    <a class="logo" href="#"><img src="Main logo.jpg" alt="Nickname" data-site-logo></a>
+    <a class="logo" href="#"><img src="./Main%20logo.jpg" alt="TIGER LEGEND TOPUP" data-site-logo></a>
     <div class="hr">
       <a class="wallet" href="#"><svg class="i"><use href="#wal"/></svg>0৳</a>
       <a class="avatar" href="#account" id="avBtn" aria-label="Profile"><div class="av-inner"><svg class="i"><use href="#user"/></svg></div></a>
@@ -1375,7 +1390,7 @@ html,body,.pk,.po,.btn,.pay,.q,.card,.nav a,.pv-back{touch-action:manipulation}
 // ==========================================
 function syncAccountLinks() {
   var siteName = (typeof website_name !== 'undefined' ? website_name : '').trim();
-  if (!siteName) siteName = 'Nickname';
+  if (!siteName) siteName = 'TIGER LEGEND TOPUP';
 
   // 1. Dynamic website name in document title and branding
   document.title = siteName;
@@ -2593,7 +2608,8 @@ setInterval(fetchFreshAccountConfig, 15000);
     var stats=document.createElement('div'); stats.className='player-card-stats';
     var level=(d.level!==undefined && d.level!==null && d.level!=='None') ? d.level : 'N/A';
     var likes=(d.likes!==undefined && d.likes!==null && d.likes!=='None') ? Number(d.likes).toLocaleString() : 'N/A';
-    stats.textContent='UID '+(d.uid || uid)+' · '+likes+' Likes · Lv '+level;
+    function stat(label,value){ var item=document.createElement('div'); item.className='player-card-stat'; var l=document.createElement('b'); l.textContent=label; var v=document.createElement('span'); v.textContent=value; item.appendChild(l); item.appendChild(v); stats.appendChild(item); }
+    stat('▣ UID',d.uid || uid); stat('♥ LIKES',likes); stat('✦ LEVEL',level);
     info.appendChild(name); info.appendChild(region); info.appendChild(stats);
     var check=document.createElement('div'); check.className='player-card-check'; check.textContent='✓';
     box.appendChild(avatar); box.appendChild(info); box.appendChild(check);
