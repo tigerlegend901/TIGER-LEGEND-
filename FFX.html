@@ -301,9 +301,15 @@ footer .about h2{margin:0 0 6px;font-size:24px;font-weight:800;letter-spacing:-.
 .btn:active{transform:scale(.98)}
 .btn:disabled{opacity:.6}
 .pname{display:none;align-items:center;gap:8px;margin-top:12px;padding:12px 14px;border-radius:12px;font-size:14px;font-weight:600}
-.pname.ok{display:flex;background:#ecfdf3;color:#067647;border:1px solid #abefc6}
+.pname.ok{display:flex;background:#19172f;color:#fff;border:1px solid #302b50;padding:14px;border-radius:16px;gap:12px;align-items:center}
 .pname.err{display:flex;background:#fef3f2;color:#b42318;border:1px solid #fecdca}
 .pname svg{font-size:18px;flex-shrink:0}
+.player-card-avatar{width:48px;height:48px;flex:0 0 48px;border-radius:50%;display:grid;place-items:center;background:#34316b;font-size:24px}
+.player-card-info{flex:1;min-width:0}
+.player-card-name{font-size:16px;font-weight:800;line-height:1.35;overflow-wrap:anywhere;color:#fff}
+.player-card-region{margin-top:4px;font-size:12px;color:#c3d1ff}
+.player-card-stats{margin-top:5px;font-size:12px;color:#9db4f4;line-height:1.5;overflow-wrap:anywhere}
+.player-card-check{width:28px;height:28px;flex:0 0 28px;border-radius:50%;display:grid;place-items:center;background:#3269df;color:#fff;font-size:18px;font-weight:800}
 .pay{display:flex;align-items:center;gap:12px;padding:13px 14px;margin-bottom:10px;border-radius:16px;border:1.5px solid var(--bd);background:#fff;cursor:pointer;font-family:inherit;width:100%;text-align:left;color:var(--tx);transition:.2s}
 .pay .pi2{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:20px;color:#fff;background:var(--g);flex-shrink:0}
 .pay .tx{flex:1;min-width:0}
@@ -2577,6 +2583,21 @@ setInterval(fetchFreshAccountConfig, 15000);
     box.className='pname '+type; box.textContent='';
     box.appendChild(icon(iconId)); box.appendChild(document.createTextNode(text));
   }
+  function showPlayer(box,d,uid){
+    box.className='pname ok'; box.textContent='';
+    var avatar=document.createElement('div'); avatar.className='player-card-avatar'; avatar.textContent='🎮';
+    var info=document.createElement('div'); info.className='player-card-info';
+    var name=document.createElement('div'); name.className='player-card-name'; name.textContent=pickName(d);
+    var region=document.createElement('div'); region.className='player-card-region';
+    region.textContent=(d.region_flag || '')+' '+(d.region_name || d.region || 'Unknown');
+    var stats=document.createElement('div'); stats.className='player-card-stats';
+    var level=(d.level!==undefined && d.level!==null && d.level!=='None') ? d.level : 'N/A';
+    var likes=(d.likes!==undefined && d.likes!==null && d.likes!=='None') ? Number(d.likes).toLocaleString() : 'N/A';
+    stats.textContent='UID '+(d.uid || uid)+' · '+likes+' Likes · Lv '+level;
+    info.appendChild(name); info.appendChild(region); info.appendChild(stats);
+    var check=document.createElement('div'); check.className='player-card-check'; check.textContent='✓';
+    box.appendChild(avatar); box.appendChild(info); box.appendChild(check);
+  }
   function pickName(d){
     if(!d) return '';
     var n=d.name || (d.player&&d.player.name) || (d.raw&&d.raw.name) || '';
@@ -2601,7 +2622,7 @@ setInterval(fetchFreshAccountConfig, 15000);
         .then(function(d){
           if(my!==token) return;
           var name=pickName(d);
-          if(name) show(box,'ok',name,'chk');
+          if(name) showPlayer(box,d,uid);
           else show(box,'err','এই আইডির কোনো প্লেয়ার পাওয়া যায়নি','warn');
         })
         .catch(function(){
